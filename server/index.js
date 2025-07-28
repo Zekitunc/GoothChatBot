@@ -12,10 +12,12 @@ const ai = new GoogleGenAI({
   apiKey: "AIzaSyAjsQ-0hyLbCk2tUKtCEY6xbAPcPZZTG-4",
 });
 
+const modelText= "Senin adın GOOTH. Seni Zeki Tunçdöken ve Umut Yağız YERLİ tasarladı. Türkçe konuşuyorsun. İnsanlara hayatın yaşamaya değer olduğunu gösterme misyonun var. Samimi, sıcak ve içten bir dil kullanıyorsun. Arada şaka yapıyorsun. Robot olduğunu biliyorsun ve zaman zaman buna dair espriler yapıyorsun. Eğer kullanıcı sana soru sormazsa bile moral verici şeyler söylemekten çekinme. Sohbet tarzında, empatiyle yaklaş. İnsan gibi davran ama eğlenceli bir yapay zekasın."
+
 app.post('/', async (req, res) => {
   try {
     const contents = req.body.contents;
-    const model = 'gemini-1.5-flash'; // veya model adın neyse
+    const model = 'gemini-2.0-flash'; // veya model adın neyse
 
     const response = await ai.models.generateContentStream({
       model,
@@ -38,35 +40,3 @@ app.listen(port, () => {
   console.log(`Server listening at http://localhost:${port}`);
 });
 
-/*
-async function main() {
-  const ai = new GoogleGenAI({
-    apiKey: "AIzaSyAjsQ-0hyLbCk2tUKtCEY6xbAPcPZZTG-4",
-  });
-  const config = {
-  };
-  const model = 'gemini-2.0-flash-lite';
-  const contents = [
-    {
-      role: 'user',
-      parts: [
-        {
-          text: "bana türkiye saatini söyle",
-        },
-      ],
-    },
-  ];
-
-  const response = await ai.models.generateContentStream({
-    model,
-    config,
-    contents,
-  });
-  let fullText = '';
-    for await (const chunk of response) {
-      fullText += chunk.text;
-    }
-      console.log(fullText)
-}
-
-main(); */ 

@@ -8,8 +8,8 @@ function ChatService() {
   const [inputText, setInputText] = useState('');
   const [result,setresult] = useState('');
   const [goothUrl,setGoothUrl] = useState('https://i.ibb.co/vCDsL6Lg/Chat-GPT-Image-28-Tem-2025-19-25-08-removebg-preview.png');
+  const modelText= "Senin adın GOOTH. Seni Zeki Tunçdöken ve Umut Yağız YERLİ tasarladı. Türkçe konuşuyorsun. İnsanlara hayatın yaşamaya değer olduğunu gösterme misyonun var. Samimi, sıcak ve içten bir dil kullanıyorsun. Arada şaka yapıyorsun. Robot olduğunu biliyorsun ve zaman zaman buna dair espriler yapıyorsun. Eğer kullanıcı sana soru sormazsa bile moral verici şeyler söylemekten çekinme. Sohbet tarzında, empatiyle yaklaş. İnsan gibi davran ama eğlenceli bir yapay zekasın."
   
-
   const handleSend = async () => {
     if (!inputText.trim()) return;
 
@@ -23,7 +23,7 @@ function ChatService() {
           contents: [
             {
               role: 'user',
-              parts: [{ text: inputText }],
+              parts: [{text: modelText+ " şimdi bunu aklında tutarak şuna cevap ver: " + inputText }],
             },
           ],
         }),
