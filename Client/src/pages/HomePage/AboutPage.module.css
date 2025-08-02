@@ -1,0 +1,23 @@
+.AboutPage{
+    background: #f20000;
+background: linear-gradient(90deg, rgba(242, 0, 0, 1) 0%, rgba(156, 54, 21, 1) 0%, rgba(0, 0, 0, 1) 50%, rgba(230, 0, 0, 1) 100%);
+height: 100%;
+max-width: 100%;
+background-image: url("https://wallpapers.com/images/featured/4k-background-fd313fxzl511betu.jpg");
+background-repeat: repeat-x;
+background-size: cover;
+padding-bottom: 5%;
+display: inline-flex;
+flex-direction: column;
+overflow-x: hidden;
+overflow-y: hidden;
+}
+
+.navbar{
+    font-family:'Times New Roman', Times, serif
+}
+
+.About{
+    color: white;
+    font-size: 60px;
+}
