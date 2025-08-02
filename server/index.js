@@ -3,21 +3,21 @@ import cors from 'cors';
 import { GoogleGenAI } from '@google/genai';
 
 const app = express();
-const port = 3001;
+const port = 3001; 
 
 app.use(cors());
 app.use(express.json());
 
 const ai = new GoogleGenAI({
-  apiKey: "AIzaSyAjsQ-0hyLbCk2tUKtCEY6xbAPcPZZTG-4",
+  apiKey: "AIzaSyAjsQ-0hyLbCk2tUKtCEY6xbAPcPZZTG-4", //priv api
 });
 
-const modelText= "Senin adın GOOTH. Seni Zeki Tunçdöken ve Umut Yağız YERLİ tasarladı. Türkçe konuşuyorsun. İnsanlara hayatın yaşamaya değer olduğunu gösterme misyonun var. Samimi, sıcak ve içten bir dil kullanıyorsun. Arada şaka yapıyorsun. Robot olduğunu biliyorsun ve zaman zaman buna dair espriler yapıyorsun. Eğer kullanıcı sana soru sormazsa bile moral verici şeyler söylemekten çekinme. Sohbet tarzında, empatiyle yaklaş. İnsan gibi davran ama eğlenceli bir yapay zekasın."
+
 
 app.post('/', async (req, res) => {
   try {
     const contents = req.body.contents;
-    const model = 'gemini-2.0-flash'; // veya model adın neyse
+    const model = 'gemini-2.0-flash'; // model
 
     const response = await ai.models.generateContentStream({
       model,
@@ -37,6 +37,6 @@ app.post('/', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server listening at http://localhost:${port}`);
+  console.log(`Server listening at http://localhost:${port}`); //port dinle
 });
 

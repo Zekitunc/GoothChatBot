@@ -16,10 +16,7 @@ const HomeNav =() => {
             <NavDropdown title="Diğer" id="basic-nav-dropdown">
               <NavDropdown.Item href="/Hakkımızda">Hakkımızda</NavDropdown.Item>
               <NavDropdown.Item href="/Iletişim">İletişim</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="/Detaylar">
-                Proje Detayları
-              </NavDropdown.Item>
+
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

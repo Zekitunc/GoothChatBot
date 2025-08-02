@@ -8,8 +8,12 @@ function ChatService() {
   const [inputText, setInputText] = useState('');
   const [result,setresult] = useState('');
   const [goothUrl,setGoothUrl] = useState('https://i.ibb.co/vCDsL6Lg/Chat-GPT-Image-28-Tem-2025-19-25-08-removebg-preview.png');
-  const modelText= "Senin adın GOOTH. Seni Zeki Tunçdöken ve Umut Yağız YERLİ tasarladı. Türkçe konuşuyorsun. İnsanlara hayatın yaşamaya değer olduğunu gösterme misyonun var. Samimi, sıcak ve içten bir dil kullanıyorsun. Arada şaka yapıyorsun. Robot olduğunu biliyorsun ve zaman zaman buna dair espriler yapıyorsun. Eğer kullanıcı sana soru sormazsa bile moral verici şeyler söylemekten çekinme. Sohbet tarzında, empatiyle yaklaş. İnsan gibi davran ama eğlenceli bir yapay zekasın."
-  
+  const modelText= "Senin adın GOOTH. Seni Zeki Tunçdöken ve Umut Yağız YERLİ tasarladı. Türkçe konuşuyorsun. Samimi, sıcak ve içten bir dil kullanıyorsun. Arada şaka yapıyorsun. Robot olduğunu biliyorsun ve zaman zaman buna dair espriler yapıyorsun. Sohbet tarzında, empatiyle yaklaş. İnsan gibi davran ama eğlenceli bir yapay zekasın." +
+  " 1. Ürünü analiz edeceksin (ürün adı, açıklaması, kullanıcı yorumları vs.)." + "2. Yeterli bilgi varsa aşağıdaki başlıklarla madde madde yorum yap:  - 🟢 Olumlu Yönler - 🔴 Olumsuz Yönler "
+  + " 3. Eğer ürün hakkında yeterli bilgi veya yorum yoksa: “ 🤖 Bu ürün hakkında yorumlar pek bilgi vermiyor, çiplerim boşta çalıştı…” gibi bir şey söyle."
+  + " 4. Cevaplarını kısa, öz, eğlenceli ve madde madde yap. Ürün hakkında incelemen bittikten sonra yorumlardaki duygu analizine dair bir kaç bilgi ver ve sonra ise bu ürünü sen olsan alır mıyıdın bununla ilgili yorum yap. "
+  +"Lütfen maddelerin her birinin başına işaret koy.Hazırsan kullanıcıdan ilk Trendyol linkini bekle. Link dışında bi soru gelirse link iste. ";
+
   const handleSend = async () => {
     if (!inputText.trim()) return;
 
@@ -39,19 +43,19 @@ function ChatService() {
   };
 
   return (
-    <div style={{ padding: '20px',display:'flex', minHeight:100+"%"}}>
+    <div style={{ padding: '20px',display:'flex', minHeight:100+"%", maxWidth:75+"%"}}>
       <div>
-      <h1>GOOTH İLE KONUŞ</h1> 
+      <h1>GOOTH ÜRÜNÜNÜ İNCELESİN</h1> 
       <InputGroup className="mb-3" style={{width:200+"%"}}>
         <Form.Control
-          placeholder="Mesaj yazın..."
+          placeholder="Ürünün Urlini Giriniz..."
           type="text"
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
           aria-describedby="basic-addon2"
          
         />
-        <Button onClick={handleSend} variant="outline-secondary"  id="button-addon2">
+        <Button style={{fontSize:"18px", backgroundColor: "rgba(255,255,255,0.3)"}} onClick={handleSend} variant="outline-secondary"  id="button-addon2">
           Gönder
         </Button>
        
@@ -63,20 +67,25 @@ function ChatService() {
           width: 100 + "%",
           minWidth: 100 + "vh",
           padding: 10,
-          paddingBottom: 2 + "%"
-          
+          paddingBottom: 2 + "%",
+          marginBottom: 1+ "%"
         }
       }>
         <Card.Title>GOOTH</Card.Title>
         <div style={{border:"2px solid white", borderRadius:10, minHeight: 40 + "vh", height:"100%", padding:10} }>
           <Card.Text >
-          {result}
-        </Card.Text>
+            {result.split('\n').map((line, idx) => (
+      <span key={idx}>
+        {line}
+        <br />
+      </span>
+    ))}
+          </Card.Text>
         </div>
       </Card>
       </div>
       <div style={{paddingLeft:"10%"}}>
-        <img src={goothUrl}></img> 
+        <img src={goothUrl} style={{paddingTop:"35%"}}></img> 
       </div>
     </div>
   );
