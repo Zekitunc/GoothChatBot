@@ -3,13 +3,13 @@ import React from 'react';
 
 const Hakkimizda = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-6rem)] p-8   backdrop-filter min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-indigo-200 to-purple-400 p-4-blur-lg rounded-3xl shadow-xl border border-gray-200 text-center max-w-3xl mx-auto mt-8">
-      <h1 className="text-4xl font-bold text-gray-800 mb-6 font-sans">Hakkımızda</h1>
-      <p className="text-lg text-gray-700 leading-relaxed font-sans mb-4">
+    <div style={{textAlign:'center', padding:'10%'}} className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-indigo-200 to-purple-400 p-4">
+      <h1 style={{paddingBottom:'5vh'}} className="text-5xl font-bold text-black mb-6 font-sans">Hakkımızda</h1>
+      <p className="text-2xl text-black leading-relaxed font-sans mb-4">
         Bu proje, Zeki Tunçdöken ve Umut Yağız Yerli tarafından bir hackathon etkinliği kapsamında geliştirilmiştir.
         GOOTH, Google’ın gelişmiş dil modeli Gemini altyapısıyla desteklenen özel bir yapay zeka karakteridir.
       </p>
-      <p className="text-lg text-gray-700 leading-relaxed font-sans">
+      <p className="text-2xl text-black leading-relaxed font-sans">
         GOOTH Ne Yapar?
 Kullanıcılardan gelen E-Ticaret ürün linklerini analiz eder.
 Her ürün için:
