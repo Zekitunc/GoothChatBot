@@ -9,7 +9,7 @@ const Hakkimizda = () => {
         Bu proje, Zeki Tunçdöken ve Umut Yağız Yerli tarafından bir hackathon etkinliği kapsamında geliştirilmiştir.
         GOOTH, Google’ın gelişmiş dil modeli Gemini altyapısıyla desteklenen özel bir yapay zeka karakteridir.
       </p>
-      <p className="text-2xl text-black leading-relaxed font-sans">
+      <p className="text-xl text-black leading-relaxed font-sans">
         GOOTH Ne Yapar?
 Kullanıcılardan gelen E-Ticaret ürün linklerini analiz eder.
 Her ürün için:
