@@ -1,4 +1,4 @@
 
-### 'node index.js'
+### `node index.js`
 
 backend tarafının çalıştırılması.
