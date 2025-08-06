@@ -7,20 +7,14 @@ import { GoogleGenAI } from '@google/genai';
 
 const app = express();
 const port = 3001;
-const geminiAPI = process.env.GEMINI_API_KEY;
 
 app.use(cors());
 app.use(express.json());
 
-
 const ai = new GoogleGenAI({
-  apiKey: geminiAPI,
+  apiKey: process.env.GEMINI_API_KEY,
 });
 
-if (!geminiAPI) {
-  console.error("❌ GEMINI_API_KEY bulunamadı.");
-  process.exit(1);
-}
 
 app.post('/', async (req, res) => {
   try {
